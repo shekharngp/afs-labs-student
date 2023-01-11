@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deploymen
+  name: db-deploymen
   namespace: swankhede
   labels:
-    app: app
+    app: db
 spec:
   replicas: 1
   strategy:
@@ -12,17 +12,17 @@ spec:
   minReadySeconds: 20
   selector:
     matchLabels:
-      app: app
+      app: db
   template:
     metadata:
       labels:
-        app: app
+        app: db
     spec:
       containers:
       - envFrom:
         - secretRef:
             name: db-secret
-        name: app-deploymen
-        image: harbor.dev.afsmtddso.com/swankhede-harbor-project/app@sha256:b7ca8002b1fa91886a066c8320604b45b4e95d3a29353b13d9843ed53fc2d549
+        name: db-deploymen
+        image: harbor.dev.afsmtddso.com/swankhede-harbor-project/db@sha256:f233f2a6100484e34148d42ebaba76425b8423e9275a60a8b520b5e08adff096
         ports:
-        - containerPort: 5000
+        - containerPort: 5432
