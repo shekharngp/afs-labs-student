@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: db-deploymen
+  name: db-deployment
   namespace: swankhede
   labels:
     app: db
@@ -22,7 +22,7 @@ spec:
       - envFrom:
         - secretRef:
             name: db-secret
-        name: db-deploymen
+        name: db-deployment
         image: harbor.dev.afsmtddso.com/swankhede-harbor-project/db@sha256:f233f2a6100484e34148d42ebaba76425b8423e9275a60a8b520b5e08adff096
         ports:
         - containerPort: 5432
