@@ -1,6 +1,6 @@
 --
 -- PostgreSQL database dump
---
+--changes for lab 6. this changes will make hash code change in DB repository
 
 -- Dumped from database version 9.5.4
 -- Dumped by pg_dump version 9.5.4
