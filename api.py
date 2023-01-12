@@ -106,6 +106,7 @@ def pay_for_cart():
         del session['cart_total']
     except stripe.error.CardError as e:
         # Since it's a decline, stripe.error.CardError will be caught
+        # Add comment to just check for application changes
         body = e.json_body
         err = body['error']
 
